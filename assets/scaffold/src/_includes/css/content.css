@@ -1,0 +1,62 @@
+/* === Content boxes === */
+.placeholder-box,
+.tip-box,
+.resource-card,
+.video-placeholder {
+    background-color: var(--panel-blue);
+    border: 1px solid #d8e7f0;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.tip-box {
+    border-left: 4px solid var(--brand-pink);
+    background-color: #fff2f8;
+    border-top-color: #f2cadf;
+    border-right-color: #f2cadf;
+    border-bottom-color: #f2cadf;
+}
+
+.tip-box strong { color: var(--brand-pink); }
+
+.video-placeholder { min-height: 260px; }
+
+/* === Embed containers === */
+.embed-shell {
+    margin: 1.5rem 0;
+    background: #fff;
+    border: 1px solid var(--card-border);
+    padding: 1rem;
+}
+
+.embed-frame {
+    width: 100%;
+    border: 0;
+    display: block;
+    background: #fff;
+}
+
+.recording-frame { min-height: 315px; }
+.slides-frame { min-height: 760px; }
+
+/* === Resource links === */
+.resource-link {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--brand-pink);
+    color: #ffffff;
+    background: var(--brand-pink);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.resource-link:hover {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #ffffff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .slides-frame { min-height: 620px; }
+}

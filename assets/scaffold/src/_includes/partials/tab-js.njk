@@ -1,0 +1,74 @@
+<script>
+function activateTab(selectedTab, setFocus) {
+    var tabList = selectedTab.closest('[role="tablist"]');
+    var tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+
+    tabs.forEach(function(tab) {
+        var isActive = tab === selectedTab;
+        var panelId = tab.getAttribute("aria-controls");
+        var panel = document.getElementById(panelId);
+
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+
+        if (panel) {
+            panel.classList.toggle("active", isActive);
+            panel.hidden = !isActive;
+            panel.setAttribute("aria-hidden", String(!isActive));
+        }
+    });
+
+    if (setFocus) {
+        selectedTab.focus();
+    }
+}
+
+function handleTabKeydown(event) {
+    var allowedKeys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"];
+    if (!allowedKeys.includes(event.key)) return;
+
+    var tabs = Array.from(event.currentTarget.closest('[role="tablist"]').querySelectorAll('[role="tab"]'));
+    var currentIndex = tabs.indexOf(event.currentTarget);
+    var nextIndex = currentIndex;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (currentIndex + 1) % tabs.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") {
+        nextIndex = 0;
+    } else if (event.key === "End") {
+        nextIndex = tabs.length - 1;
+    }
+
+    event.preventDefault();
+    activateTab(tabs[nextIndex], true);
+}
+
+function initializeTabs() {
+    document.querySelectorAll('[role="tablist"]').forEach(function(tabList) {
+        var tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+        var activeTab = tabs.find(function(tab) {
+            return tab.classList.contains("active");
+        }) || tabs[0];
+
+        tabs.forEach(function(tab) {
+            var panelId = tab.getAttribute("aria-controls");
+            var panel = document.getElementById(panelId);
+
+            tab.addEventListener("click", function() { activateTab(tab, false); });
+            tab.addEventListener("keydown", handleTabKeydown);
+
+            if (panel) {
+                panel.setAttribute("role", "tabpanel");
+                panel.setAttribute("aria-labelledby", tab.id);
+            }
+        });
+
+        if (activeTab) { activateTab(activeTab, false); }
+    });
+}
+
+window.addEventListener("DOMContentLoaded", initializeTabs);
+</script>

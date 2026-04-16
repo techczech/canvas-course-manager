@@ -1,0 +1,54 @@
+/* === Skip link === */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    background: var(--brand-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* === Focus visible === */
+.nav-button:focus-visible,
+.resource-link:focus-visible,
+.home-link:focus-visible,
+.embed-frame:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--brand-pink);
+    outline-offset: 3px;
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === Print === */
+@media print {
+    body { background: #fff; }
+    .container { max-width: 100%; padding: 0; }
+    header { background: #fff; color: var(--text-dark); padding: 1rem 0; }
+    h1 { color: var(--brand-primary); font-size: 2rem; }
+    .header-actions,
+    .nav-buttons,
+    .skip-link { display: none; }
+    .tab-content { display: block !important; border: none; padding: 0; }
+    .tab-content[hidden] { display: block !important; }
+    footer { border-top: 1px solid #ccc; }
+    a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #666; }
+}

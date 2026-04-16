@@ -1,0 +1,135 @@
+/* === Fonts === */
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: italic;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlphgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXfbqoIEs.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: italic;
+    font-weight: 500;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpkgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXfbJbA1sno5w.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: italic;
+    font-weight: 600;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpkgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXfbJ3BFsno5w.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: italic;
+    font-weight: 700;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpkgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXfbITBVsno5w.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRf06i_B2sg.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqv.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 500;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRfi6m_B2sg.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 600;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRfp66_B2sg.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://fonts.gstatic.com/s/barlowsemicondensed/v16/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRfw6-_B2sg.ttf") format("truetype");
+}
+
+/* === Variables === */
+:root {
+    --brand-primary: #002147;
+    --brand-dark: #001a38;
+    --light-blue: #4fa8c5;
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --text-dark: #333333;
+    --border-color: #dee2e6;
+    --warning-yellow: #ffc107;
+    --brand-font: "Barlow Semi Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --brand-pink: #e4007c;
+    --page-blue: #f2f3f5;
+    --panel-blue: #f8fbfd;
+    --tab-blue: #ffffff;
+    --card-border: #d6dde6;
+}
+
+/* === Reset === */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Base typography === */
+body {
+    font-family: var(--brand-font);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--page-blue);
+}
+
+h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h2 {
+    color: var(--brand-pink);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: none;
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 4px;
+    background: var(--brand-pink);
+}
+
+h3 {
+    color: var(--brand-primary);
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+p { margin-bottom: 1rem; }
+ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+li { margin-bottom: 0.5rem; }
+
+a { color: var(--brand-primary); }
+a:hover { color: var(--brand-pink); }

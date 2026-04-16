@@ -1,0 +1,16 @@
+{
+  "name": "canvas-course-COURSE_SLUG",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eleventy-based Canvas LMS course pages for COURSE_NAME",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "NODE_ENV=production npx @11ty/eleventy",
+    "deploy:dry": ".venv/bin/python scripts/deploy-to-canvas.py --dry-run",
+    "deploy": ".venv/bin/python scripts/deploy-to-canvas.py",
+    "deploy:file": ".venv/bin/python scripts/deploy-to-canvas.py --file"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+<header>
+    <div class="header-content">
+        <h1>{{ title }}</h1>
+        <div class="metadata">
+            {% if audience %}<p><strong>Audience:</strong> {{ audience }}</p>{% endif %}
+            {% if speaker %}<p><strong>Speaker:</strong> {{ speaker }}</p>{% endif %}
+            {% if metadataHtml %}{{ metadataHtml | safe }}{% endif %}
+            {% if courseLink %}<p><strong>Course link:</strong> <a href="{{ courseLink }}" target="_blank" rel="noopener noreferrer">{{ courseLink }}</a></p>{% endif %}
+        </div>
+    </div>
+    <div class="header-actions">
+        <a class="home-link" href="{{ site.courseUrl }}" target="_blank" rel="noopener noreferrer">Back to home page</a>
+    </div>
+</header>
