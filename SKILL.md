@@ -1,24 +1,6 @@
 ---
 name: canvas-course-manager
-description: |
-  Manage Canvas LMS courses from a local folder — or interact with Canvas as a student. Course management:
-  scaffold a project, author pages in Markdown, build self-contained HTML via Eleventy, deploy via REST API.
-  Student use: check grades, list assignments, view course updates, all from the CLI.
-
-  TRIGGERS: Use when:
-  - User asks to create, update, or deploy Canvas course pages
-  - User wants to set up a new Canvas course project folder
-  - User says "canvas course", "deploy to canvas", "canvas page", "canvas site"
-  - User asks to manage Canvas course settings (nav, front page, visibility)
-  - User mentions Canvas LMS in a course-management context
-  - User wants to convert existing HTML course pages to the Eleventy pipeline
-
-  - User wants to check grades, assignments, or course updates as a student
-  - User asks "what's due", "check my grades", "list my courses"
-
-  DO NOT USE when:
-  - User is asking about HTML Canvas element (the drawing API) — that's a different thing
-  - User wants a generic static site not destined for Canvas LMS
+description: "Manage Canvas LMS courses."
 ---
 
 # Canvas Course Manager
